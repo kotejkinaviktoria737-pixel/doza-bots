@@ -6,19 +6,14 @@
     <title>Канава</title>
     <style>
         :root {
-            --text-main: #e6f0fa;
-            --text-accent: #a3c2ff;
-            --bg-glass: rgba(10, 10, 12, 0.85);
-            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-main: #b3b3b3; /* Приглушенный серый для основного текста */
+            --text-accent: #ffffff; /* Чисто белый для наведения */
+            --bg-color: #000000; /* Идеально черный фон */
+            --border-color: #1a1a1a; /* Очень темно-серые рамки */
         }
 
         body {
-            /* Добавлен красивый темный градиент на случай, если bg.jpg нет */
-            background: linear-gradient(135deg, #050505 0%, #1a1a24 100%);
-            background-image: url('bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
@@ -32,46 +27,44 @@
         }
 
         .content-box {
-            background: var(--bg-glass);
-            padding: 50px;
-            border: 1px solid var(--border-glass);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-            border-radius: 12px;
-            max-width: 700px;
+            background: var(--bg-color);
+            padding: 70px 50px; /* Увеличил внутренние отступы */
+            border: 1px solid var(--border-color);
+            max-width: 750px;
             width: 100%;
             text-align: center;
-            backdrop-filter: blur(8px);
             box-sizing: border-box;
         }
 
         .intro-text {
             font-size: 20px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            color: #ccc;
+            margin-bottom: 70px; /* Отступ от текста до кнопок стал больше */
+            line-height: 2.2; /* Увеличил межстрочный интервал */
+            letter-spacing: 1.5px;
+            color: #d9d9d9;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 50px; /* Расстояние между кнопками стало больше */
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 80px; /* Отступ от кнопок до ботов стал больше */
         }
 
         .abstract-link {
             position: relative;
-            color: #ffffff;
+            color: #8c8c8c;
             text-decoration: none;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            padding: 15px 30px;
+            letter-spacing: 4px;
+            padding: 20px 35px; /* Сделал кнопки чуть просторнее */
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
+        /* Уголки кнопок */
         .abstract-link::before,
         .abstract-link::after {
             content: '';
@@ -83,81 +76,82 @@
 
         .abstract-link::before {
             top: 0; left: 0;
-            border-top: 2px solid var(--text-accent);
-            border-left: 2px solid var(--text-accent);
+            border-top: 1px solid #555;
+            border-left: 1px solid #555;
         }
 
         .abstract-link::after {
             bottom: 0; right: 0;
-            border-bottom: 2px solid var(--text-accent);
-            border-right: 2px solid var(--text-accent);
+            border-bottom: 1px solid #555;
+            border-right: 1px solid #555;
         }
 
         .abstract-link:hover {
-            letter-spacing: 6px;
+            letter-spacing: 8px;
             color: var(--text-accent);
-            text-shadow: 0 0 15px rgba(163, 194, 255, 0.4);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .abstract-link:hover::before,
         .abstract-link:hover::after {
             width: 100%;
             height: 100%;
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: #333;
         }
 
         .bots-list {
             text-align: left;
-            border-top: 1px solid var(--border-glass);
-            padding-top: 30px;
+            border-top: 1px dashed #222; /* Разделитель теперь пунктирный и темный */
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 40px; /* Расстояние между карточками ботов стало сильно больше */
         }
 
-        /* Новое оформление для ботов: карточки */
         .bot-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 3px solid var(--text-accent);
-            transition: transform 0.3s ease, background 0.3s ease;
+            background: #030303; /* Едва заметный темно-серый фон у карточек */
+            padding: 30px; /* Отступы внутри карточки */
+            border: 1px solid #0f0f0f;
+            border-left: 2px solid #333; /* Темно-серая полоса слева */
+            transition: transform 0.3s ease, border-left-color 0.3s ease;
         }
 
         .bot-card:hover {
-            background: rgba(255, 255, 255, 0.06);
             transform: translateX(5px);
+            border-left-color: var(--text-accent); /* При наведении полоса становится белой */
         }
 
         .bot-card a {
-            color: #ffffff;
+            color: #e6e6e6;
             font-size: 20px;
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
+            margin-bottom: 20px; /* Отступ от имени бота до описания */
+            transition: color 0.3s ease, letter-spacing 0.3s ease;
         }
 
         .bot-card a:hover {
             color: var(--text-accent);
+            letter-spacing: 1px;
         }
 
         .bot-card p {
             margin: 0;
             font-size: 15px;
-            color: #aaaaaa;
-            line-height: 1.5;
+            color: #808080; /* Описание более тусклое, чтобы имя выделялось */
+            line-height: 2.0; /* Увеличил межстрочный интервал в описании */
         }
 
-        /* Адаптация под телефоны */
+        /* Адаптация под мобилки */
         @media (max-width: 600px) {
             .content-box {
-                padding: 30px 20px;
+                padding: 40px 20px;
+                border: none; /* На телефонах убираем рамку вокруг всего сайта */
             }
             .abstract-link {
-                font-size: 22px;
-                padding: 10px 20px;
+                font-size: 20px;
+                padding: 15px 20px;
             }
             .intro-text {
                 font-size: 16px;
