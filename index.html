@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Канава</title>
     <style>
-        /* Настройки фона с картинкой */
         body {
             background-color: #050505;
-            background-image: url('bg.jpg'); /* Подключаем вашу картинку */
-            background-size: cover; /* Растянуть на весь экран */
+            background-image: url('bg.jpg');
+            background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Картинка стоит на месте при прокрутке */
+            background-attachment: fixed;
             color: #e6f0fa;
-            font-family: 'Courier New', Courier, monospace; /* Шрифт в стиле печатной машинки/кода для атмосферы */
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -22,7 +21,6 @@
             min-height: 100vh;
         }
 
-        /* Темная полупрозрачная подложка, чтобы текст не сливался с цепями */
         .content-box {
             background: rgba(0, 0, 0, 0.75);
             padding: 50px;
@@ -31,10 +29,9 @@
             border-radius: 5px;
             max-width: 700px;
             text-align: center;
-            backdrop-filter: blur(2px); /* Легкое размытие цепей под текстом */
+            backdrop-filter: blur(2px);
         }
 
-        /* Текст приветствия */
         .intro-text {
             font-size: 22px;
             margin-bottom: 50px;
@@ -43,20 +40,19 @@
             text-shadow: 2px 2px 4px #000;
         }
 
-        /* Контейнер для ссылок */
         .links-container {
             display: flex;
-            flex-direction: column; /* Ссылки друг под другом */
-            gap: 40px; /* Большое расстояние между ними */
+            flex-direction: column;
+            gap: 40px;
             align-items: center;
+            margin-bottom: 50px;
         }
 
-        /* КРУПНЫЕ АБСТРАКТНЫЕ ССЫЛКИ */
         .abstract-link {
             position: relative;
             color: #ffffff;
             text-decoration: none;
-            font-size: 36px; /* Очень крупный шрифт */
+            font-size: 36px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -65,7 +61,6 @@
             text-shadow: 3px 3px 0px rgba(0,0,0,0.8), -1px -1px 0px rgba(255,255,255,0.2);
         }
 
-        /* Абстрактные углы (отделка) - Верхний левый */
         .abstract-link::before {
             content: '';
             position: absolute;
@@ -78,7 +73,6 @@
             transition: all 0.4s ease;
         }
 
-        /* Абстрактные углы (отделка) - Нижний правый */
         .abstract-link::after {
             content: '';
             position: absolute;
@@ -91,33 +85,68 @@
             transition: all 0.4s ease;
         }
 
-        /* Эффект при наведении мышки на ссылку */
         .abstract-link:hover {
-            letter-spacing: 8px; /* Текст разъезжается */
-            color: #d1e2ff; /* Легкая синева */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Свечение */
+            letter-spacing: 8px;
+            color: #d1e2ff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* Углы превращаются в полноценную рамку */
         .abstract-link:hover::before,
         .abstract-link:hover::after {
             width: 100%;
             height: 100%;
             border-color: rgba(255, 255, 255, 0.3);
         }
+
+        .bots-list {
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        .bots-list p {
+            margin-bottom: 25px;
+        }
+
+        .bots-list a {
+            color: #ffffff;
+            font-size: 18px;
+            text-decoration: none;
+            border-bottom: 1px dashed #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .bots-list a:hover {
+            color: #d1e2ff;
+            border-bottom-color: #d1e2ff;
+        }
     </style>
 </head>
 <body>
 
     <div class="content-box">
-        <!-- Текст -->
         <div class="intro-text">
             добро пожаловать в канаву, где я клепаю своих ботов.
         </div>
 
-        <!-- Ссылки -->
         <div class="links-container">
             <a href="https://t.me/dozalovers" target="_blank" class="abstract-link">телега автора.</a>
             <a href="mailto:kotejkinaviktoria737@gmail.com" class="abstract-link">Email</a>
         </div>
+
+        <div class="bots-list">
+            <p>
+                <strong><a href="https://t.me/dozalovers/9" target="_blank">Юта Окоццу</a></strong><br>
+                АУ, здесь он студент программирования, сам по себе вайбик для ролевой игры - приятный флафф, взаимоотношения не установлены, на всё ваша воля фантазии.
+            </p>
+            <p>
+                <strong><a href="https://t.me/dozalovers/11" target="_blank">Мегуми Фушигуро</a></strong><br>
+                АУ в которой он работает стримером, числанувшись с юридического, биография разница с каноном. можете устанавливать любые взаимоотношения с ним. произшла небольшая ошибка, сам json формат находится под постом, а не в комментариях, но думаю вы разберетесь.
+            </p>
+        </div>
     </div>
+
+</body>
+</html>
