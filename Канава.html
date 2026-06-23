@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Канава</title>
+    <style>
+        /* Настройки фона с картинкой */
+        body {
+            background-color: #050505;
+            background-image: url('bg.jpg'); /* Подключаем вашу картинку */
+            background-size: cover; /* Растянуть на весь экран */
+            background-position: center;
+            background-attachment: fixed; /* Картинка стоит на месте при прокрутке */
+            color: #e6f0fa;
+            font-family: 'Courier New', Courier, monospace; /* Шрифт в стиле печатной машинки/кода для атмосферы */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Темная полупрозрачная подложка, чтобы текст не сливался с цепями */
+        .content-box {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            border-radius: 5px;
+            max-width: 700px;
+            text-align: center;
+            backdrop-filter: blur(2px); /* Легкое размытие цепей под текстом */
+        }
+
+        /* Текст приветствия */
+        .intro-text {
+            font-size: 22px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Контейнер для ссылок */
+        .links-container {
+            display: flex;
+            flex-direction: column; /* Ссылки друг под другом */
+            gap: 40px; /* Большое расстояние между ними */
+            align-items: center;
+        }
+
+        /* КРУПНЫЕ АБСТРАКТНЫЕ ССЫЛКИ */
+        .abstract-link {
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 36px; /* Очень крупный шрифт */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 15px 25px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.8), -1px -1px 0px rgba(255,255,255,0.2);
+        }
+
+        /* Абстрактные углы (отделка) - Верхний левый */
+        .abstract-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            border-top: 3px solid #fff;
+            border-left: 3px solid #fff;
+            transition: all 0.4s ease;
+        }
+
+        /* Абстрактные углы (отделка) - Нижний правый */
+        .abstract-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 25px;
+            height: 25px;
+            border-bottom: 3px solid #fff;
+            border-right: 3px solid #fff;
+            transition: all 0.4s ease;
+        }
+
+        /* Эффект при наведении мышки на ссылку */
+        .abstract-link:hover {
+            letter-spacing: 8px; /* Текст разъезжается */
+            color: #d1e2ff; /* Легкая синева */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Свечение */
+        }
+
+        /* Углы превращаются в полноценную рамку */
+        .abstract-link:hover::before,
+        .abstract-link:hover::after {
+            width: 100%;
+            height: 100%;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <!-- Текст -->
+        <div class="intro-text">
+            добро пожаловать в канаву, где я клепаю своих ботов.
+        </div>
+
+        <!-- Ссылки -->
+        <div class="links-container">
+            <a href="https://t.me/dozalovers" target="_blank" class="abstract-link">телега автора.</a>
+            <a href="mailto:kotejkinaviktoria737@gmail.com" class="abstract-link">Email</a>
+        </div>
+    </div>
+
+</body>
+</html>
